@@ -1,0 +1,13 @@
+/* natural box model */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /* Custom Styles Here */
+
+  .goIU {
+      color = 'red'
+  }
