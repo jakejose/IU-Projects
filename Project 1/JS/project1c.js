@@ -18,36 +18,31 @@ console.log('working');
 
 function colorPicker() {
     //producing random numbers for hue and 2 percentages with floor and random
-    let hue = Math.floor(Math.random()*360)
-    let per1= Math.floor(Math.random()*100)
-    let per2= Math.floor(Math.random()*100)
+    let hue = Math.floor(Math.random()*360);
+    let per1= Math.floor(Math.random()*100);
+    let per2= Math.floor(Math.random()*100);
     //string that will be built with random variables 
     let color = 'hsl('+ hue +','+per1+'%,'+per2+'%)'
 
     //changing HTML elements based on the number that is produced
-    document.body.style.background = color
+    document.body.style.background = color;
     //document.getElementById('button').style.background = color
-    document.getElementById('code').innerText = color
-    document.getElementById('header').innerText = 'HSL Color Code:'
+    document.getElementById('code').innerText = color;
+    document.getElementById('header').innerText = 'HSL Color Code:';
 
     //conditional statement that changes text color based on if the luminoscity is 
     //light vs dark
     if (per2 > 50){
         //light
-        document.body.style.color= 'black'
-        document.getElementById('button').style.color = 'black'
+        document.body.style.color= 'black';
+        document.getElementById('button').style.color = 'black';
 
     } else {
         //dark
-        document.body.style.color= 'white'
-        document.getElementById('button').style.color = 'white'
+        document.body.style.color= 'white';
+        document.getElementById('button').style.color = 'white';
     }
-
-
-
     //console.log(color)
-
 }
-
 //using event listener to have button click run JS code
-document.getElementById('buttonc').addEventListener('click',colorPicker)
+document.getElementById('buttonc').addEventListener('click',colorPicker);

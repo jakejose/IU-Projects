@@ -30,4 +30,4 @@ function colorSelector(){
 }
 
 //using event listener to run JS upon button click
-document.getElementById('buttona').addEventListener('click',colorSelector)
+document.getElementById('buttona').addEventListener('click',colorSelector);
