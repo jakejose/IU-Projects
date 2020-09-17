@@ -13,15 +13,16 @@ console.log('working');
 //5 update the HTML (textContent (or innerHTML), style)
 
 function colorSelector(){
-    let colors = ['pink', 'yellow','orange','blue','red','green','grey'];
+    let colors = ['pink', 'yellow','orange','blue','red','green','grey','chocolate','crimson','coral'];
 
     let newColor = colors[Math.floor(Math.random()*colors.length)];
 
     console.log(newColor)
 
     document.body.style.background = newColor
-    document.getElementById('button').style.background = newColor
-    document.getElementById('code').innerText = newColor  
+    //document.getElementById('button').style.background = newColor
+    document.getElementById('code').innerText = newColor
+    document.getElementById('header').innerText = 'HTML Color Code:'
 
 }
 
