@@ -8,13 +8,14 @@ html {
 
   /* Custom Styles Here */
 
+  /*header with custom font*/
 h1{
   font-family: 'American Typewriter', serif;
   text-align: center;
  
 }
 
-
+/* creating a custom button for the different actions*/
   button {
     background: gray;
     font-size: 24px;
@@ -27,7 +28,8 @@ h1{
    font-size: 50px;
     
   }   
-
+/* centering all items in the container using flexbox 
+also contains cusotm font*/
   .container { display: flex;
     align-items: center;
     justify-content: center;
