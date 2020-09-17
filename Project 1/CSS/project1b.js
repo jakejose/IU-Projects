@@ -12,8 +12,8 @@ console.log('working');
 function colorPicker() {
     let colors = "#"
     const chars = ['a','b','c','d','e','f','1','2','3','4','5','6','7','8','9','0']
-    while (colors.length < 8){
-        let newColor = chars[Math.floor(Math.random()*colors.length)]
+    while (colors.length < 7){
+        let newColor = chars[Math.floor(Math.random()*chars.length)]
         colors += newColor
     }
     document.body.style.background = colors
@@ -30,4 +30,4 @@ function colorPicker() {
 
 
 
-document.getElementById('button').addEventListener('click',colorSelector)
+document.getElementById('button').addEventListener('click',colorPicker)
