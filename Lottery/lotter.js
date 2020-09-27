@@ -8,18 +8,27 @@ console.log("hello")
 //2 out of 5 Free Cash 5 Ticket
 
 //User picks 5 numbers
-function userNumbers(){
-    let nums = [];
+function userNums(){
+    let userNumsArray = [];
     for (let counter = 0; counter<5; counter++){
         let guess = prompt("Guess a number 1-45");
+        if (isNaN(guess))
         guess = parseInt(guess);
         if (guess<=45 && guess>=1){
             nums.push(guess);
         }else{
             counter--;
+            console.log('Not betwen 1 and 45')
+        }
+        if (nums.includes(guess)==False){
+            nums.push(guess);
+        }else{
+            counter--;
+            console.log('That number was already guessed!');
+
         }
     }
-    return nums;
+    return userNumsArray;
 }
 //Generates 5 numbers (Winning numbers)
     //function - input = range of nums - output = array
@@ -67,3 +76,18 @@ function lottery(){
 //console.log(userNumbers())
 //console.log(compareNums(generateNumbers(),generateNumbers()))
 lottery()
+
+
+/*-cross check to see if the the user entered numbers match any of the winners
+
+-If any of the numbers match one of the winners record that in an array
+
+-add up the total winnings
+
+-display the different numbers they won on the interface
+
+-includes monetary prize (ex '$100','$1000',etc) and name ex ('Jackpot','Free TICKET')
+
+-Display total winnings and winning numbers*/
+
+

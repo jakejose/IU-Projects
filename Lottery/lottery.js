@@ -28,6 +28,17 @@ allChoices.forEach(element=>{
 });
 
 
+function updateUserNums(){
+    for (let i = 0; i < userNumsArray.length; i++){
+        if(isNaN(userNumsArray[i])){
+            html += `   <div>'-'</div> `;
+        }else{
+        html += `   <div>${i}</div> `;}
+}
+user-nums.insertAdjacentHTML('afterbegin',html);
+
+}
+
 
 
 
