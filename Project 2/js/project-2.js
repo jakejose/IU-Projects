@@ -22,9 +22,29 @@ function loadJSON(callback) {
     xobj.send(null);  
 }
 
+
+const drugs = document.querySelector('#drugs');
+function showPics(data) {
+  let pic = ''
+  data.forEach(item => {
+    pic +=
+    `<figure data-drug-name="${item.name};" data-drug-amount=${item.amount}>
+    //     	<img src="images/${item.slug}.jpg" alt="excedrin">
+    //      <figcaption>${item.name};</figcaption>
+    //   </figure>`;
+
+
+  });
+  drugs.insertAdjacentHTML('beforeend', pic);
+};
+
+
+
+
 loadJSON(function(json) {
-    // console.log(json);
+    console.log(json);
     // do something with data
+    showPics(json);
     
 });
 
@@ -40,6 +60,8 @@ loadJSON(function(json) {
 //     	<img src="images/excedrin.jpg" alt="excedrin">
 //      <figcaption>Excedrin&reg;</figcaption>
 //   </figure>
+
+
 
 // PART TWO - see css/styles.css
 
