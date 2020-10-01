@@ -1,0 +1,100 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #282828;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  padding-top: 20px;
+  font-size: 50px;
+  color: #d9534f;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+
+h3 {
+  color: #ddd;
+  font-size: 35px;
+}
+
+h4 {
+  color: #ddd;
+  font-size: 25px;
+}
+
+p {
+  color: #282828;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+span {
+  color: #f0ad4e;
+}
+
+#card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  width: 85vw;
+  margin: 0 auto;
+  /* @TO-DO: Display in a grid */
+}
+
+.card-container {
+  background-color: #eee;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer; /* so it looks like a link */
+  transform: translate(0);
+  transition: transform 0.25s ease-out;
+  color: #333;
+}
+
+.card-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.selected {
+  background-color: #d9534f;
+  border: 2px solid #fff;
+}
+
+#my-lineup {
+  padding-bottom: 10px;
+  background-color: #eee;
+  width: 85vw;
+  margin: 3em auto 6em;
+  box-shadow: 10px 6px 5px -9px rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.player-card {
+  background-color: #333;
+  width: 70vw;
+  padding: 10px 30px;
+  margin: 30px auto;
+  border-radius: 5px;
+}
