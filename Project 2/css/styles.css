@@ -74,7 +74,7 @@ grid-template-columns: 564px  225px  150px;
 /* drugs containing acetametaphin */
 #drugs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   height:100px;
   width: 100px;
   margin: 0;
@@ -135,8 +135,8 @@ figure.selected figcaption {
 
 /* how close to lethal dose bar */
 #progressbar {
-  display: grid;
-  align-items: right;
+  display: flex;
+  align-items: flex-end;
 }
 
 .meter {

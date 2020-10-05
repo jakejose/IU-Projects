@@ -38,6 +38,8 @@ function showPics(data) {
   drugs.insertAdjacentHTML('beforeend', pic);
 };
 
+const meter = document.querySelector()
+
 
 
 
@@ -72,6 +74,8 @@ loadJSON(function(json) {
 // - updates "lethal dose" bar's height (second column)
 // - updates the bar's label (second column)
 // - updates total dose and warning message (third column)
+
+
 
 // THRESHOLDS
 // total < 4000
