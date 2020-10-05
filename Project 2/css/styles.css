@@ -66,25 +66,20 @@ B: The drugs are 100px x 100px - you may need to force a height of 448px
 */
 
 #interactive {
-  display: grid;
-  grid-template-columns: repeat(3, 100px);
-  /*gap: 1em;*/
-  height: 100px;
-  width: 100px;
-  margin: 1 auto;
+display: grid;
+grid-template-columns: 564px  225px  150px;
 
 }
 
 /* drugs containing acetametaphin */
 #drugs {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  /*gap: 1em;*/
-  height: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  height:100px;
   width: 100px;
-  margin: 1 auto;
-  max-height: 448px;
-
+  margin: 0;
+  max-height: 448PX; 
+ 
 }
 
 /*
@@ -140,8 +135,8 @@ figure.selected figcaption {
 
 /* how close to lethal dose bar */
 #progressbar {
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  align-items: right;
 }
 
 .meter {

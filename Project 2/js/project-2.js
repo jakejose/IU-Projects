@@ -29,9 +29,9 @@ function showPics(data) {
   data.forEach(item => {
     pic +=
     `<figure data-drug-name="${item.name};" data-drug-amount=${item.amount}>
-    //     	<img src="images/${item.slug}.jpg" alt="excedrin">
-    //      <figcaption>${item.name};</figcaption>
-    //   </figure>`;
+        	<img src="images/${item.slug}.jpg" alt="excedrin">
+         <figcaption>${item.name};</figcaption>
+      </figure>`;
 
 
   });
