@@ -32,25 +32,20 @@ function loadJSON(callback) {
       }
     };
     xobj.send(null);  
-}
+};
 
-function createCards(data){
-  data.array.forEach(item => {
-    let card =
-  /*   `<div class="player-card">
-    <h3>${item.name} (Monster # ${item.id}+1)
-    <span>${item.username}</span>
-    </h3>
-    <h4>Contact: ${item.phone} / ${item.email}</h4>
-</div>` */
-`
-<div class="card-container" data-index="${monster.id}">                
-<img alt="monster" src="https://robohash.org/set_set2/bgset_bg0/${monster.id}?size=180x180"/>                
-<h2>${monster.name}</h2>            
-</div >
-`
-    
-  })
+
+function createCards(data) {
+  let card = ''
+  data.forEach(item => {
+    card +=
+    `<div class="card-container" data-index="${item.id}">
+    <img alt="monster" src="https://robohash.org/set_set2/bgset_bg0/${item.id}?size=180x180"/>
+    <h2>${item.name}</h2>
+</div >`;
+
+
+  });
   cardList.insertAdjacentHTML('beforeend', card);
 };
 
@@ -61,6 +56,29 @@ loadJSON(function(json) {
     createCards(json);
 });
 
-//Most Powerful Grid Lines
+const characters = document.querySelectorAll('.card-container');
+console.log(characters);
+const draftDiv = document.querySelector('#my-lineup');
+let pick = ``;
+
+characters.forEach(char => {
+  char.addEventListener('click', () => {
+    pick += `<div class="player-card">
+    <h3>${char.name} (Monster #${char.id + 1})
+    <span>${char.username}</span>
+    </h3>
+    <h4>Contact: ${char.phone} / ${char.email}</h4>
+</div>`;
+
+    draftDiv.insertAdjacentHTML('beforeend', pick);
+    
+  });
+
+
+});
+
+
+
+
 
 

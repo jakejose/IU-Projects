@@ -22,33 +22,88 @@ function loadJSON(callback) {
     xobj.send(null);  
 }
 
-
+//let total = 0
+let amounts = []
 const drugs = document.querySelector('#drugs');
 function showPics(data) {
   let pic = ''
+  let count = 0
   data.forEach(item => {
-    pic +=
-    `<figure data-drug-name="${item.name};" data-drug-amount=${item.amount}>
+    pic+=
+    `
+  <div class = 'allDrugs'>
+    <figure data-drug-name="${item.name};" data-drug-amount=${item.amount}>
         	<img src="images/${item.slug}.jpg" alt="excedrin">
-         <figcaption>${item.name};</figcaption>
-      </figure>`;
+         <figcaption>${item.name}</figcaption>
+      </figure>
+    </div>
+    `;
+
+    amounts.push(item.amount)
+      //amount += item.amount
+  //total += item.amount;
+
+
 
 
   });
+
+  
   drugs.insertAdjacentHTML('beforeend', pic);
+  //console.log(count);
 };
 
-const meter = document.querySelector()
+console.log(drugs);
+console.log(amounts);
+
+let figs = document.getElementsByClassName('allDrugs');
+console.log(figs);
+
+
+
+
+
+
+
+
 
 
 
 
 loadJSON(function(json) {
-    console.log(json);
+    //console.log(json);
     // do something with data
     showPics(json);
+
     
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 
+// function countTotal(data){
+//   data.forEach(item =>{
+//     total += item.amount
+
+//   })
+// }
+
+
+
+
 
 // PART ONE
 // Dynamically generate HTML for each drug from JSON-formatted content
