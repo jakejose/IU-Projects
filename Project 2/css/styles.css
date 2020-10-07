@@ -7,6 +7,7 @@ html {
 }
 
 /*
+//minmax(???px, 1fr)
   General
 */
 .container {
@@ -67,18 +68,22 @@ B: The drugs are 100px x 100px - you may need to force a height of 448px
 
 #interactive {
 display: grid;
-grid-template-columns: 564px  225px  150px;
+grid-template-columns:564px 225px 150px;
+grid-template-rows: 1fr;
+grid-gap: 30px;
 
 }
 
 /* drugs containing acetametaphin */
 #drugs {
+  max-height: 448px; 
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  height:100px;
-  width: 100px;
-  margin: 0;
-  max-height: 448PX; 
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+ 
+  grid-gap: 10px;
+  /*margin: 0;*/
+  
  
 }
 
@@ -92,6 +97,8 @@ grid-template-columns: 564px  225px  150px;
 figure { 
   margin: 0;
   border: 1px solid lightgray;
+  height:100px;
+  width: 100px;
 }
 
 figcaption {

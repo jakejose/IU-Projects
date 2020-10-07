@@ -22,59 +22,100 @@ function loadJSON(callback) {
     xobj.send(null);  
 }
 
-//let total = 0
-let amounts = []
-const drugs = document.querySelector('#drugs');
+
+
 function showPics(data) {
-  let pic = ''
-  let count = 0
+  const drugs = document.querySelector('#drugs');
+  let pic = '';
+ 
   data.forEach(item => {
     pic+=
     `
-  <div class = 'allDrugs'>
     <figure data-drug-name="${item.name};" data-drug-amount=${item.amount}>
         	<img src="images/${item.slug}.jpg" alt="excedrin">
          <figcaption>${item.name}</figcaption>
       </figure>
-    </div>
     `;
 
-    amounts.push(item.amount)
-      //amount += item.amount
-  //total += item.amount;
-
-
-
-
   });
-
-  
   drugs.insertAdjacentHTML('beforeend', pic);
-  //console.log(count);
+  let figs = document.querySelectorAll('figure');
+  figs.forEach(item => {
+    item.addEventListener('click',function(){
+      selectDrug(item);
+
+
+    })
+  })
 };
 
-console.log(drugs);
-console.log(amounts);
 
-let figs = document.getElementsByClassName('allDrugs');
-console.log(figs);
+//let figs = document.querySelectorAll('figure');
+//console.log(figs);
 
-
-
+let total = 0;
+function selectDrug (drug){
 
 
 
+//grab amount from item
+total += parseInt(drug.getAttribute('data-drug-amount'));
+console.log(total);
 
+//update total variable
+
+//up progress bar level based on total
+//update the label of progress bar
+let percent = Math.floor((total / 15000)*100)
+//console.log(percent);
+
+
+const progress = document.querySelector('span');
+if (percent <= 100){
+progress.style = `height: ${percent}%`
+}else{
+  progress.style = `height: 100%`
+  console.log('Overdose!');
+}
+
+
+const label = document.querySelector('.label');
+//console.log(label.textContent);
+
+label.textContent = total +'mg'
+
+if (total >= 15000){
+  label.textContent = 
+  `
+  ${total} mg 
+  OVERDOSE!  `
+}
+
+
+//update the messsage
+//includes total 
+
+let totalMesage = document.querySelector('.total');
+//console.log(totalMesage);
+
+totalMesage.textContent = total
+
+
+//record selected drugs in an array
+
+//alter CSS when figure is selected
+//apply class
+
+};
 
 
 
 
 
 loadJSON(function(json) {
-    //console.log(json);
+    console.log(json);
     // do something with data
     showPics(json);
-
     
 });
 
