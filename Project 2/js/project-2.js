@@ -1,14 +1,4 @@
 console.log(`it's alive!`);
-
-
-
-
-
-
-
-
-
-
 // code to read in the JSON
 function loadJSON(callback) {   
     var xobj = new XMLHttpRequest();
@@ -21,8 +11,6 @@ function loadJSON(callback) {
     };
     xobj.send(null);  
 }
-
-
 
 function showPics(data) {
   const drugs = document.querySelector('#drugs');
@@ -49,13 +37,9 @@ function showPics(data) {
   })
 };
 
-
-//let figs = document.querySelectorAll('figure');
-//console.log(figs);
-
 let total = 0;
 function selectDrug (drug){
-
+  drug.classList.toggle('figure.selected');
 
 
 //grab amount from item
@@ -66,24 +50,22 @@ console.log(total);
 
 //up progress bar level based on total
 //update the label of progress bar
-let percent = Math.floor((total / 15000)*100)
+let percent = Math.floor((total / 15000)*100);
 //console.log(percent);
 
-
 const progress = document.querySelector('span');
+const label = document.querySelector('.label');
 if (percent <= 100){
 progress.style = `height: ${percent}%`
+label.style = `height: ${percent}%`
 }else{
   progress.style = `height: 100%`
+  label.style = `height: 100%`
   console.log('Overdose!');
-}
+};
 
-
-const label = document.querySelector('.label');
-//console.log(label.textContent);
 
 label.textContent = total +'mg'
-
 if (total >= 15000){
   label.textContent = 
   `
@@ -111,6 +93,7 @@ let newMessage2 =
 <h4>
 Milligrams
 </h4>
+<p id= 'psa'></p>
 `;
 
 
@@ -118,21 +101,34 @@ if (total < 4000){
 // text is black
 message.insertAdjacentHTML('afterbegin',newMessage);
 message.insertAdjacentHTML('beforeend',newMessage2);
-totalMesage.style = 'color: black';
+totalMesage.style.cssText = 'color: black; font-size: 25px;';
 }
-else if (total > 4000 && total < 8000){
-  message.insertAdjacentHTML('afterbegin',newMessage);
-  message.insertAdjacentHTML('beforeend',newMessage2);
-  totalMesage.style = 'color: #D5B612';
-  message.insertAdjacentHTML('beforeend', 
-  `<p>You've exceeded the FDA’s recommended maximum 
-  daily limit of acetaminophen.</p>`
-  )
+if (total > 4000 && total < 8000){
+  totalMesage.style.cssText = 'color: #D5B612; font-size: 25px;';
+  let psa =
+  `You've exceeded the FDA’s recommended maximum 
+  daily limit of acetaminophen.`;
+  document.getElementById('psa').innerText = psa
 }
-
+if(total > 8000 && total < 15000){
+  totalMesage.style.cssText = 'color: #D17827; font-size: 25px;';
+  let psa =
+  `You've exceeded the level at which liver 
+  damage can occur if taken for several days, 
+  according to McNeil, the maker of Tylenol.`;
+  document.getElementById('psa').innerText = psa
+}
+if(total >= 15000){
+  totalMesage.style.cssText = 'color: #C20802; font-size: 25px;';
+  let psa =
+  `You've exceeded the threshold toxic dose of acetaminophen. 
+  A single dose at this level can result in death, 
+  according to medical experts and literature.`;
+  document.getElementById('psa').innerText = psa
+}
 
 //record selected drugs in an array
-
+drug.setAttribute('style', 'figure.selected');
 //alter CSS when figure is selected
 //apply class
 
