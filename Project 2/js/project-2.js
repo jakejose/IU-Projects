@@ -11,11 +11,11 @@ function loadJSON(callback) {
     };
     xobj.send(null);  
 }
-
+//showing picture data from JSON
 function showPics(data) {
   const drugs = document.querySelector('#drugs');
   let pic = '';
- 
+ //for each injecting data into html
   data.forEach(item => {
     pic+=
     `
@@ -26,8 +26,11 @@ function showPics(data) {
     `;
 
   });
+  //inserting data
   drugs.insertAdjacentHTML('beforeend', pic);
+  //selecting the data to be used
   let figs = document.querySelectorAll('figure');
+  //adding event listener
   figs.forEach(item => {
     item.addEventListener('click',function(){
       selectDrug(item);
@@ -36,12 +39,11 @@ function showPics(data) {
     })
   })
 };
-
+//total
 let total = 0;
+
+//let drugArray = []bonus atttempt
 function selectDrug (drug){
-  drug.classList.toggle('figure.selected');
-
-
 //grab amount from item
 total += parseInt(drug.getAttribute('data-drug-amount'));
 console.log(total);
@@ -51,7 +53,6 @@ console.log(total);
 //up progress bar level based on total
 //update the label of progress bar
 let percent = Math.floor((total / 15000)*100);
-//console.log(percent);
 
 const progress = document.querySelector('span');
 const label = document.querySelector('.label');
@@ -82,6 +83,8 @@ let message = document.querySelector('#message');
 
 totalMesage.textContent = total;
 
+//forming message to be outputted upon click
+
 let newMessage =
 `
 <h4>
@@ -96,7 +99,7 @@ Milligrams
 <p id= 'psa'></p>
 `;
 
-
+//conditionals for miligram threshold
 if (total < 4000){
 // text is black
 message.insertAdjacentHTML('afterbegin',newMessage);
@@ -128,12 +131,15 @@ if(total >= 15000){
 }
 
 //record selected drugs in an array
-drug.setAttribute('style', 'figure.selected');
+//could not figure this part out but here are a couple of attempts
+drug.classList.toggle('figure.selected');
+drug.setAttribute('style', 'box-shadow: 2px 2px 3px black;');
 //alter CSS when figure is selected
 //apply class
 
-};
+//drugArray.push(drug); bonus attempt
 
+};
 
 
 
@@ -147,51 +153,18 @@ loadJSON(function(json) {
 
 
 
-// PART ONE
-// Dynamically generate HTML for each drug from JSON-formatted content
-// So, using the data in drugs.js, format HTML for each drug to look like the example
-// and then insert that HTML into #drugs
-
-// NOTE: Each drug's daily limit of acetaminophen in mg
-
-//   EXAMPLE OF WHAT THE HTML SHOULD LOOK LIKE:
-//   <figure data-drug-name="Excedrin&reg;" data-drug-amount="2000">
-//     	<img src="images/excedrin.jpg" alt="excedrin">
-//      <figcaption>Excedrin&reg;</figcaption>
-//   </figure>
-
-
-
-// PART TWO - see css/styles.css
-
-// PART THREE
-// Connect each drug to an action:
-// - updates total amount of acetaminophen taken so far (total dose)
-// - select the drug visually - add a CSS class so drug appears to be selected (first column)
-// - updates "lethal dose" bar's height (second column)
-// - updates the bar's label (second column)
-// - updates total dose and warning message (third column)
-
-
-
-// THRESHOLDS
-// total < 4000
-// text is black
-// No message update
-
-
-// total < 8000
-// text is '#D5B612'
-// `You've exceeded the FDA’s recommended maximum daily limit of acetaminophen.`
-
-// total < 15000
-// text is '#D17827'
-// `You've exceeded the level at which liver damage can occur if taken for several days, according to McNeil, the maker of Tylenol.`
-
-// total >= 15000
-// text is '#C20802'
-// `You've exceeded the threshold toxic dose of acetaminophen. A single dose at this level can result in death, according to medical experts and literature.`
-
 // BONUS
 // Create a way for the drug to be unselected 
+
+
 // and thus removed from the total / tally
+//attmepting bonus
+
+//function remove (array){
+//array.forEach(item =>{
+//array.remove(item);
+//})
+//}remove(drugArray);
+
+
+//would have needed to include another event listener
