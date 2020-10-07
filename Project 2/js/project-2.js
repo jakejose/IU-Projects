@@ -98,7 +98,16 @@ if (total >= 15000){
 let totalMesage = document.querySelector('.total');
 //console.log(totalMesage);
 
-totalMesage.textContent = total
+totalMesage.textContent = total;
+
+// THRESHOLDS
+// total < 4000
+// text is black
+// No message update
+
+if (total < 4000){
+
+}
 
 
 //record selected drugs in an array
@@ -118,31 +127,6 @@ loadJSON(function(json) {
     showPics(json);
     
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 
-// function countTotal(data){
-//   data.forEach(item =>{
-//     total += item.amount
-
-//   })
-// }
-
-
 
 
 
@@ -177,6 +161,10 @@ loadJSON(function(json) {
 // total < 4000
 // text is black
 // No message update
+
+if (total < 4000){
+
+}
 
 // total < 8000
 // text is '#D5B612'
