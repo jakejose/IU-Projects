@@ -91,22 +91,43 @@ if (total >= 15000){
   OVERDOSE!  `
 }
 
-
 //update the messsage
 //includes total 
 
 let totalMesage = document.querySelector('.total');
+let message = document.querySelector('#message');
 //console.log(totalMesage);
 
 totalMesage.textContent = total;
 
-// THRESHOLDS
-// total < 4000
-// text is black
-// No message update
+let newMessage =
+`
+<h4>
+Total:
+</h4>
+`;
+let newMessage2 = 
+`
+<h4>
+Milligrams
+</h4>
+`;
+
 
 if (total < 4000){
-
+// text is black
+message.insertAdjacentHTML('afterbegin',newMessage);
+message.insertAdjacentHTML('beforeend',newMessage2);
+totalMesage.style = 'color: black';
+}
+else if (total > 4000 && total < 8000){
+  message.insertAdjacentHTML('afterbegin',newMessage);
+  message.insertAdjacentHTML('beforeend',newMessage2);
+  totalMesage.style = 'color: #D5B612';
+  message.insertAdjacentHTML('beforeend', 
+  `<p>You've exceeded the FDA’s recommended maximum 
+  daily limit of acetaminophen.</p>`
+  )
 }
 
 
@@ -162,9 +183,6 @@ loadJSON(function(json) {
 // text is black
 // No message update
 
-if (total < 4000){
-
-}
 
 // total < 8000
 // text is '#D5B612'
