@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typed</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+        span {
+            font-size: 48px;
+            font-weight: 300;
+            position: relative;
+            top: 6px;
+            animation: blinker 1.2s linear infinite;
+        }
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1><span>|</span></h1>
+
+    <script>
+        const h1 = document.querySelector('h1');
+        let message = "Hello";
+        let cursor = "<span>|</span>";
+
+        function wait(ms = 0) {
+            return new Promise((resolve) => { 
+                setTimeout(resolve, ms); 
+            });
+        }
+        async function typedWord (message){
+        for (let i = 0; i<= message.length;i++){
+            await wait(500)
+                h1.innerHTML = message.slice(0,i) + cursor;
+        }
+            typedWord(message);
+        }
+
+        typedWord(message);
+
+    </script>
+</body>
+</html>

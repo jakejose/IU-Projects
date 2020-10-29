@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 console.log('working');
 
 function loadJSON(callback) {
@@ -14,63 +14,75 @@ function loadJSON(callback) {
 }
 
 let quiz = document.querySelector('.quiz');
-
-
-
-let questionIds = [];
-let checked = [];
-let randomNum = "";
-//console.log(questionIds);
-
-function pusher(data) {
-    data.forEach(element => {
-        questionIds.push(element.id);
-        //console.log(questionIds);
-    });
-    randomNum += questionIds[Math.floor(Math.random() * questionIds.length)];
-    console.log(randomNum);
+//questions list
+let questions = [];
+let random = [];
+let checked= [];
+let correct ='';
+let numberAnswered = 0;
+let numberCorrect = 0;
+//push json into a list 
+function pusher(data){
+  data.forEach(item => {
+    questions.push(item);
+    
+  });
+showQuiz(questions);
 }
-//clear question
-//do not allow same question
-//move on to next queston
-function next() {
-    console.log(checked);
-}
-
-//inserting data into quiz
-function showQuiz(data) {
+//display data
+function showQuiz(questions){
+    random.push(questions[Math.floor(Math.random() * questions.length)]);
     let q = '<ul>';
-    pusher(data);
-    data.forEach(element => {
-        if (element.id === randomNum) {
+    questions.forEach(e =>{
+        if (random.includes(e)&&checked.includes(e)===false) {
             q +=
-                `<h2>${element.question}</h2>
-        `;
-            for (const x in element.answers) {
+                `<center>
+                <h2>${e.question}</h2>
+        </center>`;
+            for (const x in e.answers) {
                 q +=
-                    `<li><label for='${x}'>${x}: ${element.answers[x]}</label><br>
-            <input class = 'image' type='image' id = '${x}' src = 'images/${element.answers[x]}.png'>
-            </li>`;
-            }
-            checked.push(element.id);
-        }
+                    `<center>
+                    <li><label for='${x}'>${x}: ${e.answers[x]}</label><br>
+            <input class = 'image' type='image' id = '${x}' src = 'images/${e.answers[x]}.png'>
+            </li>
+            </center>`;
+            checked.push(e);
+            correct += e.correct;
+            } 
+        } 
     });
     quiz.insertAdjacentHTML('afterbegin', q + "</ul>");
     let images = document.querySelectorAll('.image');
-    clicker(images);
-    
-}
+    clicker(images);}
+
 
 function clicker(items){
     items.forEach(e =>{
         e.addEventListener('click', ()=>{
-            console.log(checked);
+            numberAnswered += 1
+            if(correct.includes(e.id)){
+                numberCorrect += 1
+                console.log(numberCorrect);
+                console.log(numberAnswered);
+            }
+            next();
         })
     })
 }
 
+function next(){
+    quiz.innerHTML='';
+    correct = '';
+    random = [];
+    showQuiz(questions);
+
+}
+
+
 loadJSON(function (json) {
     //console.log(json);
     // do something with data
-    showQuiz(json);
+    pusher(json);
+
+
 });
