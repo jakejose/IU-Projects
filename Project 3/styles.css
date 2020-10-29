@@ -10,3 +10,12 @@ body{
     background-color: salmon;
     font-family: 'Titillium Web', sans-serif;
 }
+
+input{
+    height:100px;
+    width:100px;
+}
+
+ul{
+    list-style-type: none;
+}
