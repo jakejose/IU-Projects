@@ -14,14 +14,27 @@ function loadJSON(callback) {
 }
 
 let quiz = document.querySelector('.quiz');
-//console.log(quiz);
-let questionIds = ["1","2"];
-let randomQ = questionIds[Math.floor(Math.random()*questionIds.length)];
-console.log(randomQ);
+let buttons = document.querySelectorAll('button');
+
+let questionIds = [];
+let randomNum = "";
+console.log(questionIds);
+
+function pusher (data) {
+  data.forEach(element=>{
+      questionIds.push(element.id);
+      console.log(questionIds);
+  })
+  randomNum += questionIds[Math.floor(Math.random()*questionIds.length)];
+  console.log(randomNum);
+}
+
+//inserting data into quiz
 function showQuiz(data){
-    let q = ''
+    let q = '';
+    pusher(data);
     data.forEach(element => {
-        if(element.id === randomQ){
+        if(element.id === randomNum){
         q +=
         `<h2>${element.question}</h2>;
         `
@@ -32,13 +45,14 @@ function showQuiz(data){
     }
     });
     quiz.insertAdjacentHTML('afterbegin',q);
+
 }
+
 
 
 
 loadJSON(function(json) {
     //console.log(json);
     // do something with data
-
     showQuiz(json);
 });
