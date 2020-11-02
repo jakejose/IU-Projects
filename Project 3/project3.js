@@ -46,11 +46,13 @@ function showQuiz(questions){
             <input class = 'image' type='image' id = '${x}' src = 'images/${e.answers[x]}.png'>
             </li>
             </center>`;
+            } 
             checked.push(e);
             correct += e.correct;
-            } 
         } 
+
     });
+    
     quiz.insertAdjacentHTML('afterbegin', q + "</ul>");
     let images = document.querySelectorAll('.image');
     clicker(images);}
@@ -77,6 +79,7 @@ function next(){
     showQuiz(questions);
 
 }
+
 
 
 loadJSON(function (json) {
