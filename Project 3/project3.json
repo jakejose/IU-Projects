@@ -1,7 +1,7 @@
 [
 	{
         "id":"0",
-		"question": "Who played Scarface in Scarface?",
+		"question": "Who played Tony Montana in Scarface?",
 		"answers": {
             "a":"Al Pacino",
             "b":"Don Rickles",
@@ -18,6 +18,45 @@
             "c":"Katy Perry"
         },
 		"correct": "b"
+	},
+    {
+        "id":"2",
+		"question": "Who won the Oscar for best actor in 2005?",
+		"answers": {
+            "a":"Johnny Depp (Finding Neverland)",
+            "b":"Clint Eastwood (Million Dollar Baby)",
+            "c":"Jamie Foxx (Ray)"
+        },
+		"correct": "c"
+    },
+    {
+        "id":"3",
+		"question": "Who directed Indiana Jones?",
+		"answers": {
+            "a":"George Lucas",
+            "b":"Steven Spielberg",
+            "c":"M. Night Shyamalan"
+        },
+		"correct": "b"
+    },
+    {
+        "id":"4",
+		"question": "What movie won Best Picture in 2020?",
+		"answers": {
+            "a":"Parasite",
+            "b":"Joker",
+            "c":"Bohemian Rhapsody"
+        },
+		"correct": "a"
+    },
+    {
+        "id":"5",
+		"question": "Who plays James Bond in Dr. No?",
+		"answers": {
+            "a":"Pierce Brosnan",
+            "b":"Daniel Craig",
+            "c":"Sean Connery"
+        },
+		"correct": "c"
 	}
-
 ]
