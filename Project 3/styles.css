@@ -5,33 +5,38 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
-
+/* Custom QUIZ styling */
 body{
-
+    background-color: black;
     font-family: 'Titillium Web', sans-serif;
+    
 }
-.container{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 10px 10px;
-    grid-template-areas:
-      "quiz prog result";
+h1{
+    text-align: center;
+    color: goldenrod;
 }
+
 .quiz{
-    grid-area: quiz;
-    border: 18px inset rgba(83, 91, 199, 0.32);
+    color: black;
+    border: 18px inset rgba(221, 224, 22, 0.32);
     border-radius: 21px 21px 21px 21px;
+
+    background-color:RGB(239, 192, 80) ;
+
 }
 .marker{
-    grid-area:prog;
+    text-align: center;
 }
 
 
 input{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
+}
+
+input:hover{
+    height: 150px;
+    width: 150px;
 }
 
 ul{
@@ -44,7 +49,17 @@ ul{
     border-radius: 50%;
     border: 3px solid black;
     display: inline-block;
+    background-color: white;
 }
 
+#reset{
+    height: 300px;
+    width: 250px;
+
+}
+#reset:hover{
+    height: 315px;
+    width: 265px;
+}
 
 

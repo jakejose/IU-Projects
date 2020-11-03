@@ -26,7 +26,7 @@ let numberCorrect = 0;
 function pusher(data){
 let marker = '';
   data.forEach(item => {
-    marker += `<div class ='circle' name = ${item.correct}></div>`
+    marker += `<div class ='circle' name = ${item.id}></div>`
     questions.push(item);
   });
 randomList(questions);
@@ -46,6 +46,7 @@ function randomList(ls){
     }
     return ls;}
 //display data
+let curID=''
 function showQuiz(questions){
     console.log(questions);
     random.push(questions[numberAnswered]);
@@ -63,13 +64,14 @@ function showQuiz(questions){
             for (const x in e.answers) {
                 q +=
                     `<center>
-                    <li><label for='${x}'>${x}: ${e.answers[x]}</label><br>
+                    <li><label for='${x}'><strong>${x}: ${e.answers[x]}</strong></label><br>
             <input class = 'image' type='image' id = '${x}' src = 'images/${e.answers[x]}.png'>
             </li>
             </center>`;
             } 
             checked.push(e);
             correct += e.correct;
+            curID += e.id;
 
         } 
 
@@ -85,7 +87,7 @@ function clicker(items){
     items.forEach(e =>{
         e.addEventListener('click', ()=>{
             numberAnswered += 1
-            let answer = document.querySelector(`div[name = '${correct}']`);
+            let answer = document.querySelector(`div[name = '${curID}']`);
             console.log(answer);
             if(correct.includes(e.id)){
                 answer.style.backgroundColor = "green";
@@ -104,11 +106,46 @@ function clicker(items){
 function next(){
     quiz.innerHTML='';
     correct = '';
+    curID='';
     random = [];
     showQuiz(questions);
+    let results = '';
+    if (numberAnswered===questions.length){
+        let percentage = (numberCorrect/numberAnswered)*100;
+        results +=
+        `
+        <h3>Correct: ${numberCorrect}</h3>
+        <h3>Total Questions: ${numberAnswered}</h3>
+
+        <h3>Percentage Correct: ${percentage.toFixed(2)}%</h3>
+        <h4>Click Adam Sandler's 'Click' to play again!</h4>
+        <center><img id = 'reset' src='images/click.png'></center>
+        
+        `
+        
+        quiz.insertAdjacentHTML("afterbegin",results);
+        let reset = document.querySelector('#reset');
+        reset.addEventListener('click',()=>{
+            newGame();
+        })
+    }
 
 }
 
+function newGame(){
+    let allCircles = document.querySelectorAll('.circle');
+    allCircles.forEach(e=>{
+        e.style.backgroundColor = 'white';
+    })
+    quiz.innerHTML='';
+    curID = '';
+    random = [];
+    checked= [];
+    correct ='';
+    numberAnswered = 0;
+    numberCorrect = 0;
+    showQuiz(questions);
+}
 
 
 loadJSON(function (json) {
