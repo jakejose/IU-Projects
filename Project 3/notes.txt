@@ -1,7 +1,0 @@
-//is there anything we will learn next week that will
-//help us with project 3
-//you can chose inputs besides radio buttons
-
-try and radomize the questions
-
-img buttons

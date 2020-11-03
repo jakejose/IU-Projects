@@ -15,6 +15,7 @@ h1{
     text-align: center;
     color: goldenrod;
 }
+/*aligned items to the center of the screen using flex*/
 .container { display: flex;
     align-items: center;
     justify-content: center;
@@ -23,8 +24,10 @@ h1{
     text-align: center; 
 }
 
+/*quiz div styling*/
 .quiz{
     width: 50%;
+    padding-right: 30px;
     color: black;
     border: 18px inset rgba(221, 224, 22, 0.32);
     border-radius: 21px 21px 21px 21px;
@@ -32,20 +35,22 @@ h1{
 
 }
 
+
 input{
     height: 125px;
     width: 125px;
 }
-
+/*adding a hover so that the user knows when they are above a selection*/
 input:hover{
     height: 150px;
     width: 150px;
+    cursor: pointer;
 }
 
 ul{
     list-style-type: none;
 }
-
+/*styling for the markers*/
 .circle{
     height: 25px;
     width:25px;
@@ -54,7 +59,7 @@ ul{
     display: inline-block;
     background-color: white;
 }
-
+/* reset styling and hover*/
 #reset{
     height: 300px;
     width: 250px;
@@ -63,6 +68,7 @@ ul{
 #reset:hover{
     height: 315px;
     width: 265px;
+    cursor: pointer;
 }
 
 
