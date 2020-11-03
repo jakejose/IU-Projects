@@ -15,19 +15,22 @@ h1{
     text-align: center;
     color: goldenrod;
 }
+.container { display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    width: 100%; 
+    text-align: center; 
+}
 
 .quiz{
+    width: 50%;
     color: black;
     border: 18px inset rgba(221, 224, 22, 0.32);
     border-radius: 21px 21px 21px 21px;
-
     background-color:RGB(239, 192, 80) ;
 
 }
-.marker{
-    text-align: center;
-}
-
 
 input{
     height: 125px;

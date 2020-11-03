@@ -87,7 +87,7 @@ function clicker(items){
     items.forEach(e =>{
         e.addEventListener('click', ()=>{
             numberAnswered += 1
-            let answer = document.querySelector(`div[name = '${curID}']`);
+            let answer = document.querySelector(`div[name = '${numberAnswered-1}']`);
             console.log(answer);
             if(correct.includes(e.id)){
                 answer.style.backgroundColor = "green";
