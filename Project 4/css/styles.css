@@ -12,3 +12,45 @@ html {
     font-family: 'BioRhyme', serif;
 
   }
+
+  .display {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    width: 80vw;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+.images{
+  height: 220px;
+  width: 200px;
+  border: 3px outset cadetblue;
+  border-radius: 12px;
+  background-color: #7FDBFF;
+
+}
+
+img { 
+  height: 150px;
+  width: 150px;
+}
+
+img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+#searcher{
+  text-align: center;
+  padding: 20px;
+}
+
+input[type = text]{
+  height: 50px;
+  width: 400px;
+}
+input[type = submit]{
+  height: 50px;
+  width: 100px;
+}
