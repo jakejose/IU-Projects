@@ -10,9 +10,9 @@ function getLeagues(){
     //source: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
     fetch(`https://www.thesportsdb.com/api/v1/json/1/all_leagues.php`)
     .then(response=>response.json())
-    .then(data=>allLeagues.push(data.leagues));
-
-
+    .then(data=>data.leagues.forEach(l =>{
+        allLeagues.push(l);
+    }));
 }
 
 getLeagues();
@@ -44,5 +44,6 @@ const getData = async league => {
     });
 
 }
+
 
 getData('4380');
