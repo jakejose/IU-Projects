@@ -11,6 +11,7 @@ html {
   body{
     font-family: 'BioRhyme', serif;
     background-color: beige;
+    text-align:center;
   }
 
   .display {
@@ -64,4 +65,24 @@ input[type = submit]:active{
 }
 input[type = submit]:focus{
   outline: none;
+}
+
+.legend{
+  position: relative;
+  background-color: white;
+  border: 5px inset beige;
+  border-radius: 20px;
+  height: 10%;
+  width: 25%;
+  text-align: center;
+}
+
+ul{
+  list-style-type: none;
+  text-align: left;
+}
+
+.inner{
+  max-height: 25%;
+  max-width: 25%;
 }

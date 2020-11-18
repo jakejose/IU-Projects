@@ -23,17 +23,13 @@ const getData = async league => {
         console.log('error grabbing API');
         return;
     }
-
     const data = await response.json();
-
     const all = data.teams;
-
     all.forEach(team => {
         let t= '';
         let name = team.strTeam;
         let badge = team.strTeamBadge;
         let id = team.idTeaml
-
         t += `<div class = 'images' id = '${id}'>
         <h4>${name}</h4>
         <img src = ${badge}>
@@ -42,8 +38,54 @@ const getData = async league => {
         //console.log(t);
         display.insertAdjacentHTML('beforeend',t);
     });
+    cardClicker();
+}
+let curID = 0;
+let curInput = '';
+let button = document.querySelector('#button');
+let lookup = document.querySelector('#lookup');
+let legend = document.querySelector('.legend');
+button.addEventListener('click',()=>{
+        searcher();      
+})
 
+window.addEventListener('keydown',(event)=>{
+    if(event.keyCode == 13){
+        searcher();
+    }
+});
+function searcher(){
+    refresher();
+    legend.innerHTML='';
+    curInput = lookup.value;
+    allLeagues.forEach(l =>{
+        if (curInput.length<=4){
+            curInput = curInput.toUpperCase();
+        }
+        if (curInput==l.strLeague||curInput==l.strLeagueAlternate){
+            curID = parseInt(l.idLeague);
+        }
+    })
+    console.log(curID);
+    getData(curID);
+    
+}
+function refresher(){
+    curID = 0;
+    display.innerHTML = '';
+}
+function show (){
+    console.log('hello');
 }
 
 
-getData('4380');
+
+function cardClicker(){
+    let inner = document.querySelector('.inner');
+    let teams = document.querySelectorAll('.images');
+    teams.forEach(team =>{
+        team.addEventListener('click',()=>{
+            console.log('hello');
+        })
+    })
+}
