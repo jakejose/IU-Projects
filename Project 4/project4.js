@@ -25,6 +25,9 @@ const getData = async league => {
     }
     const data = await response.json();
     const all = data.teams;
+    if (all == null){
+        alert('CANNOT FIND LEAGUE IN DATABASE! TRY : NFL, NBA, OR NHL')
+    }else{
     all.forEach(team => {
         let t= '';
         let name = team.strTeam;
@@ -32,14 +35,14 @@ const getData = async league => {
         let id = team.idTeam
         t += `<div class = 'images' id = '${id}'>
         <h4>${name}</h4>
-        <img src = ${badge}>
+        <img class = 'logo'src = ${badge}>
         </div>
         ` 
         //console.log(t);
         display.insertAdjacentHTML('beforeend',t);
     });
     cardClicker();
-}
+}}
 let curID = 0;
 let curInput = '';
 let button = document.querySelector('#button');
@@ -105,12 +108,27 @@ const getDetails = async details =>{
     let newData = data.teams;
     console.log(newData[0]);
 
+    let short = ''
+    let picture='';
+    if(newData[0].strTeamShort == null){
+        short = newData[0].strTeam.substring(0,3);
+    }
+    else{short = newData[0].strTeamShort;}
+
+    if(newData[0].strTeamFanart2 == null){
+        picture = 'icon.png'
+    }
+    else{picture = newData[0].strTeamFanart2}
+
     let innerDes =
-    `<h3>${newData[0].strTeam} (${newData[0].strTeamShort})</h3>
-        <h3> ${newData[0].strLeague}</h3>
+    `<h5> ${newData[0].strLeague}</h5>
+    <h3>${newData[0].strTeam} (${short})</h3>
+    <img class = 'badge' src = '${newData[0].strTeamBadge}'>
+    <img class = 'pic' src = '${picture}'>
         <h4>Location: ${newData[0].strStadiumLocation}</h4>
         <h4>Stadium: ${newData[0].strStadium}</h4>
         <h4>Year Founded: ${newData[0].intFormedYear}</h4>
+        <p>${newData[0].strDescriptionEN}</p>
     ` 
     inner.innerHTML = innerDes; 
     outer.classList.add('open');

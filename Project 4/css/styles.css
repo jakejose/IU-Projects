@@ -32,13 +32,17 @@ html {
 
 }
 
-img { 
+.logo { 
   height: 150px;
   width: 150px;
 }
 
-img:hover {
+.logo:hover {
   transform: scale(1.2);
+  cursor: pointer;
+}
+.logo:active {
+  transform: scale(1.02);
   cursor: pointer;
 }
 
@@ -82,10 +86,10 @@ ul{
   text-align: left;
 }
 
-
+/*Outer/Inner from Modal lesson in class*/
 .outer {
   display: grid;
-  background: rgba(237, 237, 237, 0.7);
+  background: rgba(8, 165, 238, 0.795);
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -93,7 +97,7 @@ ul{
   left: 0;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Hide this modal until we need it */
+  opacity: 0; 
   pointer-events: none;
   transition: opacity 0.2s;
 }
@@ -103,16 +107,40 @@ ul{
   pointer-events: all;
 }
 .inner {
-  max-width: 600px;
+  max-width: 90vw;
   min-width: 400px;
-  padding: 2rem;
-  border-radius: 6px;
+  padding: 10px;
+  border-radius: 10px;
   min-height: 200px;
-  background: white;
-  box-shadow: 1px 1px 1px lightgrey;
+  max-height: 98vh;
+  box-shadow: 5px 5px 5px black;
+  background: blanchedalmond;
+
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  overflow-x: scroll;
 }
 .outer.open .inner {
   transform: translateY(0);
 }
 
+.badge{
+  position: absolute;
+  height: 200px;
+  width: 250px;
 
+  max-width: 25vw;
+  max-height: 25vh;
+  top: 8px;
+  left: 16px;
+
+}
+.pic{
+  position: absolute;
+  height: 200px;
+  width: 250px;
+  max-width: 25vw;
+  max-height: 25vh;
+  top: 8px;
+  right: 16px;
+  border-radius: 10px;
+}
