@@ -6,14 +6,14 @@ html {
     box-sizing: inherit;
   }
 
-  /* Custom Styles Here */
+  /* Custom styling for webpage*/
 
   body{
     font-family: 'BioRhyme', serif;
     background-color: beige;
     text-align:center;
   }
-
+  /* grid styling for team cards*/
   .display {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -63,6 +63,7 @@ input[type = submit]{
   height: 50px;
   width: 100px;
 }
+  /* active and focus button styling*/
 input[type = submit]:active{
   transform: scale(1.02);
   outline: none;
@@ -101,11 +102,11 @@ ul{
   pointer-events: none;
   transition: opacity 0.2s;
 }
-/* action: add/remove .open to .modal-outer */
 .outer.open {
   opacity: 1;
   pointer-events: all;
 }
+  /*Inner styling*/
 .inner {
   max-width: 90vw;
   min-width: 400px;
@@ -134,6 +135,7 @@ ul{
   left: 16px;
 
 }
+  /* positioning pictures to top left of div*/
 .pic{
   position: absolute;
   height: 200px;
@@ -144,8 +146,8 @@ ul{
   right: 16px;
   border-radius: 10px;
 }
-
-#randbutton{
+  /* random button styling*/
+#eventbutton{
   background-color: #7FDBFF;
   padding:14px 40px;
   font-size:large;
@@ -153,10 +155,10 @@ ul{
 
 }
 
-#randbutton:active{
+#eventbutton:active{
   transform: scale(1.02);
   outline: none;
 }
-#randbutton:focus{
+#eventbutton:focus{
   outline: none;
 }
