@@ -144,3 +144,19 @@ ul{
   right: 16px;
   border-radius: 10px;
 }
+
+#randbutton{
+  background-color: #7FDBFF;
+  padding:14px 40px;
+  font-size:large;
+  margin-bottom: 10px;
+
+}
+
+#randbutton:active{
+  transform: scale(1.02);
+  outline: none;
+}
+#randbutton:focus{
+  outline: none;
+}

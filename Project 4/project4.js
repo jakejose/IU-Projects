@@ -17,6 +17,7 @@ function getLeagues(){
 
 getLeagues();
 console.log(allLeagues);
+let randomDiv = document.querySelector('.random');
 const getData = async league => {
     const response = await fetch(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${league}`);
     if (!response.ok){
@@ -28,6 +29,7 @@ const getData = async league => {
     if (all == null){
         alert('CANNOT FIND LEAGUE IN DATABASE! TRY : NFL, NBA, OR NHL')
     }else{
+    randomDiv.innerHTML = `<button id = 'randbutton'>View Last 15 Events</button>`
     all.forEach(team => {
         let t= '';
         let name = team.strTeam;
@@ -38,7 +40,6 @@ const getData = async league => {
         <img class = 'logo'src = ${badge}>
         </div>
         ` 
-        //console.log(t);
         display.insertAdjacentHTML('beforeend',t);
     });
     cardClicker();
@@ -60,7 +61,7 @@ window.addEventListener('keydown',(event)=>{
 function searcher(){
     refresher();
     legend.innerHTML='';
-    curInput = lookup.value;
+    curInput = lookup.value.trim();
     allLeagues.forEach(l =>{
         if (curInput.length<=4){
             curInput = curInput.toUpperCase();
@@ -76,13 +77,8 @@ function searcher(){
 function refresher(){
     curID = 0;
     display.innerHTML = '';
+    randomDiv.innerHTML='';
 }
-function show (){
-    console.log('hello');
-}
-
-
-
 function cardClicker(description){
     let teams = document.querySelectorAll('.images');
     let curTeamID = 0;
@@ -111,7 +107,7 @@ const getDetails = async details =>{
     let short = ''
     let picture='';
     if(newData[0].strTeamShort == null){
-        short = newData[0].strTeam.substring(0,3);
+        short = newData[0].strTeam.substring(0,3).toUpperCase();
     }
     else{short = newData[0].strTeamShort;}
 
@@ -144,3 +140,43 @@ outer.addEventListener('click',()=>{
     outer.classList.remove('open');
     }
 })
+
+randomDiv.addEventListener('click',()=>{
+    console.log(curID);
+    viewEvents(curID);
+
+})
+
+
+const viewEvents = async events =>{
+    const response = await fetch(`https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${events}`);
+    if (!response.ok){
+        console.log('error grabbing API');
+        return;
+    }
+    const data = await response.json();
+    let newEvents = data.events;
+    console.log(newEvents);
+    let scores = '';
+    let away = '';
+    let home = '';
+
+    newEvents.forEach(event=>{
+        if(event.intAwayScore==null&&event.intHomeScore==null){
+            away = 'Not Found';
+            home = 'Not Found';
+        }
+        else{
+            away = event.intAwayScore;
+            home = event.intHomeScore;
+        }
+        scores += 
+        `<p><u>${event.dateEventLocal}</u></p>
+        <h3>${event.strEventAlternate}</h3>
+        <p><strong>Score: ${away} - ${home}</strong></p>
+        ` 
+    })
+    inner.innerHTML=scores;
+    outer.classList.add('open');
+}
+
