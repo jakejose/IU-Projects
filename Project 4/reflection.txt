@@ -1,0 +1,31 @@
+Project 4 Reflection: Jacob Joseph
+
+   For my final project, I decided to use a general sports data API to create a League Lookup Page. 
+   I planned for this app to include a search bar for the user to look up their desired league, 
+   clickable cards for each team in the league that would show team data, and a button that displays 
+   the last 15 events of the searched league. Overall, I felt this project went really well for me as 
+   I was able to successfully produce the three functionalities of my website, but this did not come 
+   without a few issues. 
+    The first issue I ran into was grabbing a list of all leagues from the API. This is because I 
+    previously only knew how to grab the API data using parameters (this grab did not require a parameter). 
+    I solved this by researching on Mozilla and found a decent way to import all the JSON I needed to start my search bar.
+    The second issue I had was error handling. The most obvious error I needed to address was letting 
+    the user know if a league they searched could not be found in the database. I achieve this error 
+    checking by looking to see if the searched league and raising an alert if it could not be found. 
+    Another error relating to the initial search, is if the user types in lower case letter for a league 
+    acronym (ex.  NFL vs nfl). This was fixed by checking to see if the user entry was shorter than 5 characters 
+    and uppercasing them if this is true. The next error I needed to address was if the user wanted to use keys to 
+    search/escape the inner div without clicking. I fixed this by adding event listeners to the enter key (for searching) 
+    and escape key (for exiting div). The final major error I encountered was teams that had large descriptions that could 
+    not fit the inner page. I fixed this by adding an overflow: scroll; to my CSS which allowed the user to scroll through 
+    data rather than trying to fit it into the div.
+    The largest issue I had was filling in the gaps of the data in the API. Unfortunately, the database for the API did 
+    not have all of the data I needed for some of the league in the database. For example, some leagues had events but 
+    did not have event scores, some individual teams were missing data like their shortened names and second pictures. 
+    Although I could not catch all the holes in the data, I fixed some issues like replacing missing pictures with a trophy 
+    icon and replacing missing shortened names with the first three letters of the team’s name. I recommend looking up the 
+    Swedish Hockey League to see how I handled this issue.
+    Moving forward, I will look to build upon this project. This will come in the form of adding more features 
+    that allow the users to play with the data and looking for creative ways to handle missing data. I had a great time with 
+    this project and will use my new API skills in my future projects and hopefully in the professional world. Thank you for 
+    a great semester!
