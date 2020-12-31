@@ -1,5 +1,0 @@
-//This is a document of my ITP 1 completion process
-
-Part 01: Setup Git
-1. Cloning repostory onto desktop
-git clone https://github.iu.edu/INFO-Capstone-2021/jakejose.git
