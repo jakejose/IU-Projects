@@ -31,7 +31,7 @@
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                       </svg></button>
-                    
+
                 </div>
         </div>
          -->
@@ -112,13 +112,48 @@
                                   Description of Data type</p>
                             </div>
                             <div class="rvt-box__footer rvt-text-right">
-                              Button
+                              <button type="button" class="rvt-button" data-modal-trigger="modal-example-basic">Edit <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                </svg></button>
                             </div>
+                            <!--Pop-up window-->
+                            <div class="rvt-modal"
+                                    id="modal-example-basic"
+                                    role="dialog"
+                                    aria-labelledby="modal-example-title"
+                                    aria-hidden="true"
+                                    tabindex=-1>
+                                    <div class="rvt-modal__inner">
+                                        <header class="rvt-modal__header">
+                                            <h1 class="rvt-modal__title" id="modal-example-title">Data Type</h1>
+                                        </header>
+                                        <div class="rvt-modal__body">
+                                            <p>Pull fields the need to edited into here
+                                                using PHP and/or JS.
+                                            </p>
+                                                <h4>Okay button = Changes made need to be sent to the DB</h4>
+
+                                                <h4>Cancel button = No changes sent to DB (stay the same)</h4>
+
+                                        </div>
+                                        <div class="rvt-modal__controls">
+                                            <button type="button" class="rvt-button">OK</button>
+                                            <button type="button" class="rvt-button rvt-button--secondary" data-modal-close="modal-example-basic">Cancel</button>
+                                        </div>
+                                        <button type="button" class="rvt-button rvt-modal__close" data-modal-close="modal-example-basic">
+                                            <span class="rvt-sr-only">Close</span>
+                                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                                <path fill="currentColor" d="M9.41,8l5.29-5.29a1,1,0,0,0-1.41-1.41L8,6.59,2.71,1.29A1,1,0,0,0,1.29,2.71L6.59,8,1.29,13.29a1,1,0,1,0,1.41,1.41L8,9.41l5.29,5.29a1,1,0,0,0,1.41-1.41Z"/>
+                                            </svg>
+                                        </button>
+                                </div>
                           </div>
                     </span>
                 </div>
             </div>
         </div>
+
 
 
         <!-- **************************************************************
