@@ -1,0 +1,32 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+/*Custom Styling*/
+
+
+/* .rvt-grid__item{
+    background-color: #EDEBEB;
+    padding: 10px;
+    border: 5px solid #990000;
+    border-radius: 5px;
+    text-align:center;
+    margin:10px;
+} */
+
+.rvt-container{
+  padding-top: 20px;
+
+}
+.rvt-grid__item-md{
+  padding-top: 10px;
+}
+
+.rvt-box__header{
+  background-color: #990000;
+  color: #EDEBEB;
+}

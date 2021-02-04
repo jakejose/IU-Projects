@@ -23,6 +23,33 @@
     </header>
     <main role="main" id="main-content">
 
+        <div class="rvt-m-top-lg rvt-container rvt-container--freshman rvt-container--center">
+            <label for="search" class="rvt-sr-only">Search</label>
+            <div class="rvt-input-group" >
+                <div class="rvt-input-group__prepend">
+                    <div class="rvt-dropdown">
+                        <button type="button" class="rvt-button rvt-p-right-xs rvt-p-left-xs" data-dropdown-toggle="segmented-prepend-example" style="background-color: #eee; border-color: #666; color: #666">
+                            <span class="rvt-m-right-xs">Type</span>
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path fill="currentColor" d="M8,12.46a2,2,0,0,1-1.52-.7L1.24,5.65a1,1,0,1,1,1.52-1.3L8,10.46l5.24-6.11a1,1,0,0,1,1.52,1.3L9.52,11.76A2,2,0,0,1,8,12.46Z"/>
+                            </svg>
+                        </button>
+                        <div class="rvt-dropdown__menu" role="menu" aria-hidden="true" id="segmented-prepend-example">
+                            <button type="button" role="menuitemradio">Business ID</button>
+                            <button type="button" role="menuitemradio" aria-checked="true">Business Name</button>
+                            <button type="button" role="menuitemradio">Customer ID</button>
+                            <button type="button" role="menuitemradio">Customer Name</button>
+                        </div>
+                    </div>
+                </div>
+                <input class="rvt-input-group__input" type="text" id="search" placeholder="Search Field...">
+                <div class="rvt-input-group__append">
+                    <button class="rvt-button">SEARCH</button>
+                </div>
+     
+            </div>
+        </div>
+
         <!-- <div class="rvt-container">
             <div class="rvt-grid">
                 <div class="rvt-grid__item">
@@ -183,5 +210,6 @@
         </ul>
     </footer>
     <script src="https://assets.uits.iu.edu/javascript/rivet/1.7.2/rivet.min.js"></script>
+    <script src="rivetGrid.js"></script>
 </body>
 </html>
