@@ -15,14 +15,19 @@ function startConvert(submit){
     let querySplit = query.split(" ");
 
     let variableRegex = /([$])\w+/g;
-    //let variableConvert = ` '.${variableRegex}.'`;
     let found = query.match(variableRegex);
-    //query.replaceAll(variableRegex,variableConvert);
 
     console.log(found);
     let foundNew = []
     for(let e of found){
-        foundNew.push(` '.${e}.' `);
+        let eIndex = querySplit.indexOf(e);
+        console.log(eIndex);
+        if(querySplit[eIndex-1] == '='){
+            foundNew.push(`'${e}'`);
+        }
+        else{
+        foundNew.push(` ".${e}." `);
+        }
     }
     console.log(foundNew);
 
@@ -37,15 +42,6 @@ function startConvert(submit){
       }
     }
     console.log(final);
-/*      for(let e of querySplit){
-        console.log(e);
-
-        let variableRegex = /([$])\w+/
-        let variableConvert = ` '.${variableRegex}.' `
-
-        e = e.replace(variableRegex,variableConvert);
-    }  */
-
     toPHP(final);
 }
 

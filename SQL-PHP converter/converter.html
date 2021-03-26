@@ -16,11 +16,12 @@
       <div class="form-group">
         <label for="query">SQL Query</label>
         <input type="text" class="form-control" id="query" aria-describedby="example" placeholder="Goes here....">
-        <small id="example" class="form-text text-muted">ex: SELECT * FROM Table WHERE ID = $userID</small>
+        <small id="example" class="form-text text-muted">ex: SELECT * FROM Table WHERE $IDcolumn = $specificID</small>
       </div>
       <div class="form-group">
         <label for="convert">Password</label>
         <input type="text" class="form-control" id="convert" placeholder="$sql = ...">
+        <small id="example2" class="form-text text-muted">ex: $sql = "SELECT * FROM Table WHERE ".$IDcolumn." = '$userID'";</small>
       </div>
       <button id = 'submit' type="submit" class="btn btn-primary">Submit</button>
 
