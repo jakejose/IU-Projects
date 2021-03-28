@@ -7,23 +7,29 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/converter.css">
 
     <title>SQL -> PHP</title>
   </head>
   <body>
-    <h1>Convert Your SQL Queries into PHP usable strings! </h1>
+    <h1>SQL -> PHP</h1>
+    <h4>Type in  your favorite SQL statements and see them converted into strings that
+      can be used in the PHP language
+    </h4>
 
       <div class="form-group">
         <label for="query">SQL Query</label>
         <textarea rows = '4' class="form-control" id="query" aria-describedby="example" placeholder="Goes here...."></textarea>
         <small id="example" class="form-text text-muted">ex: SELECT * FROM Table WHERE $IDcolumn = $specificID</small>
       </div>
+      <button id = 'submit' type="submit" class="btn btn-primary">CONVERT</button>
       <div class="form-group">
         <label for="convert">PHP translation</label>
         <textarea rows = '4' class="form-control" id="convert" placeholder="$sql = ..."></textarea>
         <small id="example2" class="form-text text-muted">ex: $sql = "SELECT * FROM Table WHERE ".$IDcolumn." = '$userID'";</small>
       </div>
-      <button id = 'submit' type="submit" class="btn btn-primary">Submit</button>
+      
 
 
     <!-- Optional JavaScript -->
