@@ -6,10 +6,22 @@ html {
     box-sizing: inherit;
   }
 
+  body{
+    background-color: #bdcebe;
+  }
+
   .container { display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column; 
-    width: 100%; 
+    width: 60%; 
+    height: 100%;
+    background-color: #d6cbd3;
     text-align: center; 
+    border-radius: 5px;
+    border: inset;
+}
+
+textarea {
+  width: 50%;
 }
