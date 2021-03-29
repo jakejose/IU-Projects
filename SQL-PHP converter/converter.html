@@ -4,16 +4,19 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="referrer" content="strict-origin" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/converter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
     <title>SQL -> PHP</title>
   </head>
   <body>
-    <h1>SQL -> PHP</h1>
+
+<div class = 'container'>
+    <h1><i class="fas fa-database"></i><i class="fas fa-arrows-alt-h"></i><i class="fab fa-php"></i></h1>
     <h4>Type in  your favorite SQL statements and see them converted into strings that
       can be used in the PHP language
     </h4>
@@ -29,7 +32,7 @@
         <textarea rows = '4' class="form-control" id="convert" placeholder="$sql = ..."></textarea>
         <small id="example2" class="form-text text-muted">ex: $sql = "SELECT * FROM Table WHERE ".$IDcolumn." = '$userID'";</small>
       </div>
-      
+</div>
 
 
     <!-- Optional JavaScript -->

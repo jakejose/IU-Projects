@@ -5,3 +5,11 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+  .container { display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    width: 100%; 
+    text-align: center; 
+}
