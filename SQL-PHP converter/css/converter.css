@@ -9,13 +9,14 @@ html {
   body{
     background-color: #bdcebe;
     font-family: 'Press Start 2P', cursive;
+    font-size: small;
   }
 
   .container { display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column; 
-    width: 60%; 
+    width: 85%; 
     height: 100%;
     background-color: #d6cbd3;
     text-align: center; 
@@ -24,6 +25,7 @@ html {
     border-color:#d6cbd3;
 }
 
-textarea {
-  width: 50%;
+.form-control {
+  width: 100%;
+  font-size: x-small;
 }
