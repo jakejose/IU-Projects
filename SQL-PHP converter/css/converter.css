@@ -19,7 +19,8 @@ html {
     background-color: #d6cbd3;
     text-align: center; 
     border-radius: 5px;
-    border: inset;
+    border: 5px outset;
+    border-color:#d6cbd3;
 }
 
 textarea {

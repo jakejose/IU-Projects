@@ -48,8 +48,9 @@ function startConvert(submit){
 function toPHP(final){
     let phpBox = document.querySelector('#convert');
 
-    let string ='$sql = ' + '"'+final.join(" ")+'";\n\n';
+    let string ='<?php\n$sql = ' + '"'+final.join(" ")+'";\n\n';
     string += '$result = mysqli_query($dbcon,$sql);\n\n'
     string += 'if($result){ echo "It worked!";}\nelse{echo "It did not work =(";echo msqli_error($dbcon);}'
+    string += '\n?>'
     phpBox.value = string;
 }
