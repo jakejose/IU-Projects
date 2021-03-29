@@ -8,6 +8,7 @@ html {
 
   body{
     background-color: #bdcebe;
+    font-family: 'Press Start 2P', cursive;
   }
 
   .container { display: flex;
